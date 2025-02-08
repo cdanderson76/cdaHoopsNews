@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+*  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+.canvas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: #e2e2e2;
+}
+
+.icon-container, .container p, h3 {
+  margin-left: 13px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 375px;
+  height: 67px;
+  border-bottom: 1px solid #00000031;
+}
+
+.main-title {
+  width: 160px;
+  height: 30px;
+  /* border: 2px solid black; */
+}
+
+.profile-pic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.container {
+  width: 375px;
+  /* height: 545px; */
+  /* border: 2px solid black; */
+  position: relative;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 375px;
+  height: 67px;
+  /* border: 2px solid black; */
+}
+
+.avatar-image {
+  width: 35px;
+  height: 35px;
+  /* border: 2px solid black; */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 5.5px;
+}
+
+h2, .info-container div p {
+  margin-left: 13px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h3 {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.info-container div p {
+  margin-top: -4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.container .main-image {
+  width: 375px;
+  height: 375px;
+  /* border: 2px solid black; */
+  object-fit: cover;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 104px;
+  height: 22px;
+  margin-top: 8px;
+}
+
+.icons {
+  width: 22px;
+  height: 22px;
+}
+
+.comment {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  margin-top: 165px;
+  color: white;
+}
+
+.right-arrow {
+  right: 0;
+  position: absolute;
+}
+
+.left-arrow {
+  left: 0;
+  position: absolute;
+}
