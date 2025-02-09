@@ -31,7 +31,7 @@ function Header() {
 
 function PostList() {
   
-  const myPosts = posts.map(post => {
+  const myPosts = posts.map((post, index) => {
     return (
       <Post name={post.name}
             post={post}
@@ -40,6 +40,7 @@ function PostList() {
             location={post.location}
             avatar={post.avatar}
             likes={post.likes}
+            index={index}
             />
     )
   });
@@ -55,9 +56,9 @@ function Post({name,
                username, 
                location, 
                avatar, 
-               likes, 
-               img, 
-               post}) {
+               likes,  
+               post,
+               mapIndex}) {
 
   const [ index, setIndex ] = useState(0);
   const [ showLiked, setShowLiked ] = useState(false);
@@ -95,7 +96,7 @@ function Post({name,
       </div>
       <div className='container'>
         <img src={leftarrow} alt="" className='arrow left-arrow' onClick={prevPic}/>
-        <img src={post.post[index]} alt={post.name} className='main-image'/>
+        <img src={post.post[index]} alt={post.name} className='main-image' />
         <img src={rightarrow} alt="" className='arrow right-arrow' onClick={nextPic}/>
         <div className='icon-container'>
           <img src={showLiked ? heartFilled : heart} alt="" className='icons' onClick={likePost}/>
