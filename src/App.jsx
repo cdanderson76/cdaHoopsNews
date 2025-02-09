@@ -5,9 +5,10 @@ import dm from './images/dm.png';
 import heart from './images/heart.png';
 import heartFilled from './images/heart-filled.png';
 import userAvatar from './images/user-avatar.png';
-import leftarrow from './images/leftarrow.png';
-import rightarrow from './images/rightarrow.png';
+import leftarrow from './images/left.svg';
+import rightarrow from './images/right.svg';
 import { posts } from './data';
+import { useState } from 'react';
 
 export default function App() {
 
@@ -38,7 +39,10 @@ function PostList() {
 
 function Post() {
 
-  const currIndex = posts[0];
+  const [ index, setIndex ] = useState(0);
+  const [ indexOfIndex, setIndexofIndex ] = useState(1)
+
+  const currIndex = posts[index];
 
   return (
     <>
@@ -53,7 +57,7 @@ function Post() {
       </div>
       <div className='container'>
         <img src={leftarrow} alt="" className='arrow left-arrow'/>
-        <img src={currIndex.post[2]} alt={currIndex.name} className='main-image'/>
+        <img src={currIndex.post[indexOfIndex]} alt={currIndex.name} className='main-image'/>
         <img src={rightarrow} alt="" className='arrow right-arrow'/>
         <div className='icon-container'>
           <img src={heart} alt="" className='icons'/>
@@ -61,7 +65,7 @@ function Post() {
           <img src={dm} alt="" className='icons'/>
         </div>
         <h3>{currIndex.likes} likes</h3>
-        <p className='comment'><strong>{currIndex.username}</strong> {currIndex.comment}</p>
+        <p className='comment'><strong>{currIndex.username}</strong> {currIndex.comment[indexOfIndex]}</p>
       </div>
     </>
   )
