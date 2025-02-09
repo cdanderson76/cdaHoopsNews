@@ -32,9 +32,9 @@ export const posts = [
         comment: [
                     "...a beautiful moment captured",
                     "Mamba and Gigi forever...",
-                    "Your love for your daughter and the game will never be forgotten"
+                    "It's all about the love."
                  ],
-        likes: 21
+        likes: 21800
     },
     {
         name: "Luka Doncic",
@@ -43,9 +43,9 @@ export const posts = [
         avatar: lukaAvatar,
         post: [luka1, luka2, luka3],
         comment: [
-                   "Thank you Mavs Nation.  Dallas will always be home...", "I will always cherish the memories here...", "A new, exciting chapter begins..."
+                   "Dallas will always be your home...", "I will always cherish the memories...", "Ugh! Noooooooo 😠"
                  ],
-        likes: 4
+        likes: 479
     },
     {
         name: "Lebron James",
@@ -55,8 +55,8 @@ export const posts = [
         post: [james1, james2, james3],
         comment: [
                    "...just a young kid from Akron",
-                   "Cleeeeeeevland!  This is for you!! 🏀👑🤴🏿", 
-                   "Got another teammate to help me capture the crown 😈"
+                   "Cleeeeeeevland!  This is for you!! 🏀🤴🏿", 
+                   "Got another superstar teammate! 😈"
                  ],
         likes: 4
     },
@@ -67,10 +67,10 @@ export const posts = [
         avatar: dirkAvatar,
         post: [dirk1, dirk2, dirk3],
         comment: [
-                   "Looks like I may still be the greatest Mav in history! ", 
-                   "My one-legged fadaway was unstoppable...", 
+                   "Looks like he may still be the greatest Mav in history! ", 
+                   "The one-legged fadaway was unstoppable...", 
                    "We will miss you 77.  I still can't believe this..."
                  ],
-        likes: 4
+        likes: 274
     },
 ]

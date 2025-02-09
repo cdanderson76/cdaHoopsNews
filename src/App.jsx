@@ -30,18 +30,19 @@ function Header() {
 }
 
 function PostList() {
-
-  const [ index, setIndex ] = useState(0);
-  const [ indexOfIndex, setIndexofIndex ] = useState(0)
-
-  const myPosts = posts.map(post => <Post name={post.name}
-                                          key={post.name}
-                                          username={post.username}
-                                          location={post.location}
-                                          avatar={post.avatar}
-                                          likes={post.likes}/>);
-
-    // RENDER COMMENTS OF COMMENTS
+  
+  const myPosts = posts.map(post => {
+    return (
+      <Post name={post.name}
+            post={post}
+            key={post.name}
+            username={post.username}
+            location={post.location}
+            avatar={post.avatar}
+            likes={post.likes}
+            />
+    )
+  });
 
   return (
     <div>
@@ -50,22 +51,35 @@ function PostList() {
   )
 }
 
-function Post({name, username, location, avatar, likes}) {
+function Post({name, 
+               username, 
+               location, 
+               avatar, 
+               likes, 
+               img, 
+               post}) {
+
+  const [ index, setIndex ] = useState(0);
+  const [ showLiked, setShowLiked ] = useState(false);
 
   function nextPic() {
-    if(indexOfIndex < currIndex.post.length - 1) {
-      setIndexofIndex(prev => prev + 1);
-    } else if(indexOfIndex === currIndex.post.length - 1) {
-      setIndexofIndex(0);
+    if(index < post.post.length - 1) {
+      setIndex(prev => prev + 1);
+    } else if(index === post.post.length - 1) {
+      setIndex(0);
     }
   };
 
   function prevPic() {
-    if(indexOfIndex > 0) {
-      setIndexofIndex(prev => prev - 1);
-    } else if(indexOfIndex === 0) {
-      setIndexofIndex(2);
+    if(index > 0) {
+      setIndex(prev => prev - 1);
+    } else if(index === 0) {
+      setIndex(2);
     }
+  }
+
+  function likePost() {
+    setShowLiked(prev => !prev);
   }
 
   return (
@@ -81,15 +95,15 @@ function Post({name, username, location, avatar, likes}) {
       </div>
       <div className='container'>
         <img src={leftarrow} alt="" className='arrow left-arrow' onClick={prevPic}/>
-        {/* <img src={currIndex.post[indexOfIndex]} alt={currIndex.name} className='main-image'/> */}
+        <img src={post.post[index]} alt={post.name} className='main-image'/>
         <img src={rightarrow} alt="" className='arrow right-arrow' onClick={nextPic}/>
         <div className='icon-container'>
-          <img src={heart} alt="" className='icons'/>
+          <img src={showLiked ? heartFilled : heart} alt="" className='icons' onClick={likePost}/>
           <img src={comment} alt="" className='icons'/>
           <img src={dm} alt="" className='icons'/>
         </div>
-        <h3>{likes} likes</h3>
-        <p className='comment'><strong>{username}</strong> {currIndex.comment[indexOfIndex]}</p>
+        <h3>{showLiked ? likes + 1 : likes} likes</h3>
+        <p className='comment'><strong>{username}</strong> {post.comment[index]}</p>
       </div>
     </>
   )
