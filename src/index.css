@@ -133,3 +133,7 @@ h3 {
   left: 0;
   position: absolute;
 }
+
+.left-arrow:hover, .right-arrow:hover {
+  cursor: pointer;
+}

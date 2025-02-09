@@ -30,42 +30,66 @@ function Header() {
 }
 
 function PostList() {
+
+  const [ index, setIndex ] = useState(0);
+  const [ indexOfIndex, setIndexofIndex ] = useState(0)
+
+  const myPosts = posts.map(post => <Post name={post.name}
+                                          key={post.name}
+                                          username={post.username}
+                                          location={post.location}
+                                          avatar={post.avatar}
+                                          likes={post.likes}/>);
+
+    // RENDER COMMENTS OF COMMENTS
+
   return (
     <div>
-      <Post />
+      {myPosts}
     </div>
   )
 }
 
-function Post() {
+function Post({name, username, location, avatar, likes}) {
 
-  const [ index, setIndex ] = useState(0);
-  const [ indexOfIndex, setIndexofIndex ] = useState(1)
+  function nextPic() {
+    if(indexOfIndex < currIndex.post.length - 1) {
+      setIndexofIndex(prev => prev + 1);
+    } else if(indexOfIndex === currIndex.post.length - 1) {
+      setIndexofIndex(0);
+    }
+  };
 
-  const currIndex = posts[index];
+  function prevPic() {
+    if(indexOfIndex > 0) {
+      setIndexofIndex(prev => prev - 1);
+    } else if(indexOfIndex === 0) {
+      setIndexofIndex(2);
+    }
+  }
 
   return (
     <>
       <div className='info-container'>
         <div>
-          <img src={currIndex.avatar} alt="poster's avatar" className='avatar-image'/>
+          <img src={avatar} alt="poster's avatar" className='avatar-image'/>
         </div>
         <div>
-          <h2>{currIndex.name}</h2>
-          <p>{currIndex.location}</p>
+          <h2>{name}</h2>
+          <p>{location}</p>
         </div>
       </div>
       <div className='container'>
-        <img src={leftarrow} alt="" className='arrow left-arrow'/>
-        <img src={currIndex.post[indexOfIndex]} alt={currIndex.name} className='main-image'/>
-        <img src={rightarrow} alt="" className='arrow right-arrow'/>
+        <img src={leftarrow} alt="" className='arrow left-arrow' onClick={prevPic}/>
+        {/* <img src={currIndex.post[indexOfIndex]} alt={currIndex.name} className='main-image'/> */}
+        <img src={rightarrow} alt="" className='arrow right-arrow' onClick={nextPic}/>
         <div className='icon-container'>
           <img src={heart} alt="" className='icons'/>
           <img src={comment} alt="" className='icons'/>
           <img src={dm} alt="" className='icons'/>
         </div>
-        <h3>{currIndex.likes} likes</h3>
-        <p className='comment'><strong>{currIndex.username}</strong> {currIndex.comment[indexOfIndex]}</p>
+        <h3>{likes} likes</h3>
+        <p className='comment'><strong>{username}</strong> {currIndex.comment[indexOfIndex]}</p>
       </div>
     </>
   )
