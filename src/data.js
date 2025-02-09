@@ -39,7 +39,7 @@ export const posts = [
     {
         name: "Luka Doncic",
         username: "gus1819",
-        location: "Ljubljana, Slovenia",
+        location: "Dallas, Texas",
         avatar: lukaAvatar,
         post: [luka1, luka2, luka3],
         comment: [
