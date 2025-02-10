@@ -1,7 +1,5 @@
 <h1>HoopsNews</h1>
 
-![Image](https://github.com/user-attachments/assets/9f87a105-982b-480b-af15-b9233a48cb4e)
-
 This is an HTML, CSS, project that was made available by Scrimba (called 'Oldagram' originally).  It challenges you to use external data and CSS in order to render what appears to be a live social media page.  I did add some JavaScript 
 to enable the pictures to be cycled through on each post.  You can also 'like' the photo by clicking on the 'like' icon.
 
