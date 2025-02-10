@@ -3,7 +3,6 @@
 This is an HTML, CSS, project that was made available by Scrimba (called 'Oldagram' originally).  It challenges you to use external data and CSS in order to render what appears to be a live social media page.  I did add some JavaScript 
 to enable the pictures to be cycled through on each post.  You can also 'like' the photo by clicking on the 'like' icon.
 
-![Image](https://github.com/user-attachments/assets/c15f56d9-4649-4627-a4fc-04b5515881ad)
 
 <h2>What are you most proud of, and what would you do differently next time?</h2>
 
