@@ -5,6 +5,12 @@ to enable the pictures to be cycled through on each post.  You can also 'like' t
 
 ![Image](https://github.com/user-attachments/assets/9f87a105-982b-480b-af15-b9233a48cb4e)
 
+<h2>Additional Features</h2>
+
+<p>Custom data for social media feed</p>
+<p>The ability to cycle through the photos of each post</p>
+<p>Custom font for title</p>
+
 <h2>What are you most proud of, and what would you do differently next time?</h2>
 
 I was proud that I could get a little creative with this project and somehow incorporate the sport that I love into it.  I didn't make this responsive, and only designed it for mobile because this project didn't really call for it.
